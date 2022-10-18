@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Houseplants by Freya Morgan</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://mir-s3-cdn-cf.behance.net/project_modules/disp/ba1d3a73927307.5c1a39abc75ed.png"
+    />
+    <style>
+      body {
+        background-color: rgba(255, 234, 209, 1);
+      }
+
+      /*TITLE*/
+      .titleRow {
+        display: grid;
+        gap: 2vw;
+        grid-template-areas: "titleLeft titleCenter titleRight";
+        padding: 0 1.5vw;
+      }
+
+      h1 {
+        color: rgba(38, 12, 5, 1);
+        font-family: monospace;
+        font-size: 4.5vw;
+        margin: auto 0;
+        padding: 7.071vw 0 3.962vw 0;
+        text-align: center;
+      }
+
+      /*WELCOME*/
+      .welcomeText {
+        color: rgba(38, 12, 5, 0.6);
+        font-size: 2.5vw;
+        text-transform: capitalize;
+      }
+
+      .pageContent {
+        margin: 0 10vw;
+      }
+
+      /*BUTTONS*/
+      .relaxButtons {
+        text-align: center;
+      }
+
+      button {
+        background-color: rgba(241, 214, 185, 1);
+        border: solid rgba(241, 214, 185, 1);
+        border-radius: 2vw;
+        color: rgba(38, 12, 5, 1);
+        display: inline;
+        font-family: monospace;
+        font-size: 1.5vw;
+        padding: 0.5vw 1.5vw;
+        transition: all 150ms ease-in-out;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: rgba(255, 234, 209, 1);
+        border: 2px solid rgba(241, 214, 185, 1);
+      }
+
+      .buyNowButtonGrid {
+        display: grid;
+        gap: 6vw;
+        grid-template-areas: "buyNowSnakePlant buyNowSpiderPlant buyNowPeaceLily";
+        padding: 1.5vw 0;
+      }
+
+      .buyNowButtonColumn {
+        margin: auto;
+      }
+
+      /*PLANT IMAGES*/
+      .plantImageGrid {
+        display: grid;
+        gap: 6vw;
+        grid-template-areas: "snakePlant spiderPlant peaceLily";
+        padding: 1.5vw 0;
+      }
+
+      .plantImageColumn {
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 2vw;
+        box-shadow: 1vw 1vw rgba(241, 214, 185, 1),
+          -1vw 0vw 1vw -1vw rgba(38, 12, 5, 0.2);
+        margin: auto;
+        padding: 4vw 0;
+      }
+
+      /*PLANT DESCRIPTIONS*/
+      .plantInfoGrid {
+        display: grid;
+        gap: 6vw;
+        grid-template-areas: "plantInfoColumnSnakePlant plantInfoColumnSpiderPlant plantInfoColumnPeaceLily";
+        padding: 1.5vw 0;
+      }
+
+      .plantInfoColumn > div {
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 2vw;
+        color: rgba(38, 12, 5, 1);
+        font-family: monospace;
+        margin: auto;
+        padding: 2vw 1vw 1vw 1vw;
+        text-align: left;
+        transition: transform 1s;
+      }
+
+      .plantInfoColumn:hover {
+        transform: scale(1.05);
+      }
+
+      h2 {
+        font-size: 2.5vw;
+        margin: 0;
+      }
+
+      .plantGenus {
+        color: rgba(38, 12, 5, 0.6);
+        font-size: 1.5vw;
+        font-style: italic;
+        margin: 0 0 1vw 1.5vw;
+      }
+
+      .plantDescription {
+        font-size: 2vw;
+      }
+
+      .plantRating {
+        margin: 1vw 0 2vw 0;
+        text-align: center;
+      }
+
+      .transparent {
+        opacity: 0.2;
+      }
+
+      /*PLANT BENEFITS*/
+      .plantBenefits {
+        color: rgba(38, 12, 5, 1);
+        font-family: monospace;
+        text-align: center;
+        margin: 1.5vw 0;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 2vw;
+        padding: 1vw 0;
+      }
+
+      .plantBenefitsTitle {
+        font-size: 2vw;
+        margin: 1vw;
+        text-decoration: underline;
+      }
+
+      p {
+        color: rgba(38, 12, 5, 0.4);
+        font-size: 1.5vw;
+        line-height: 2.5vw;
+        padding: 0;
+      }
+
+      /*FOOTER*/
+      .gifPlants {
+        display: block;
+        margin: 3vw auto 1vw auto;
+        width: 40%;
+      }
+
+      hr {
+        background-color: rgba(38, 12, 5, 1);
+        border: none;
+        height: 1px;
+        margin: 0;
+      }
+
+      div.signature {
+        color: rgba(38, 12, 5, 0.6);
+        font-family: monospace;
+        font-size: 1.5vw;
+        margin: 1vw auto 1vw auto;
+        text-align: center;
+      }
+
+      .author {
+        color: rgba(38, 12, 5, 0.6);
+        text-decoration: underline;
+        transition: all 100ms ease-in-out;
+      }
+
+      .author:hover {
+        color: rgba(38, 12, 5, 1);
+        font-weight: 550;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Title-->
+    <div class="titleRow">
+      <div>
+        <img
+          class="titleLeft"
+          src="https://img.freepik.com/free-vector/telecommuting-concept_52683-37090.jpg?w=996&t=st=1647485870~exp=1647486470~hmac=f97a2e940c1c4220a2ff5a5dbbbf2c43d8043973c4adadf4ef864652f8aa35f1"
+          alt="Woman working from home Left"
+          style="width: 100%"
+        />
+      </div>
+      <div>
+        <h1 class="titleCenter">
+          Houseplants
+          <!--WELCOME LINE-->
+          <div class="welcomeText"></div>
+        </h1>
+      </div>
+      <div>
+        <img
+          class="titleRight"
+          src="https://img.freepik.com/free-vector/telecommuting-concept_52683-37091.jpg?w=996&t=st=1647493438~exp=1647494038~hmac=9ccf5b0c68cc0c19876d334aead264de9420dc52596df76f41136cd277fde0eb"
+          alt="Woman working from home Right"
+          style="width: 100%"
+        />
+      </div>
+    </div>
+
+    <div class="pageContent">
+      <!--Lofi Audio Buttons-->
+      <audio id="lofiAudio" loop>
+        <source
+          src="https://cryptovhs.xyz/assets/songs/dontaskalex%20-%20failure.mp3"
+          type="audio/mp3"
+        />
+        Your browser does not support the audio element.
+      </audio>
+
+      <div class="relaxButtons">
+        <button class="playButton">Enter Relax Mode</button>
+        <button class="pauseButton">Exit Relax Mode</button>
+      </div>
+
+      <!--Plant Photo Cards-->
+      <div class="plantImageGrid">
+        <div class="snakePlantHover">
+          <div class="plantImageColumn">
+            <img
+              class="snakePlant"
+              src="https://media.istockphoto.com/vectors/sansevieria-vector-id1282375526?k=20&m=1282375526&s=612x612&w=0&h=19WsFD9YLFPV06fBqTQtQ7OqgX7Jea89TFJbVBqeFQY="
+              alt="Snake Plant"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+        <div class="spiderPlantHover">
+          <div class="plantImageColumn">
+            <img
+              class="spiderPlant"
+              src="https://media.istockphoto.com/vectors/chlorophytum-vector-id1282375452?k=20&m=1282375452&s=612x612&w=0&h=7YRKt-Wng-izts2NBi3VUixEYRLc4pppXmeX7t5t1hk="
+              alt="Spider Plant"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+        <div class="peaceLilyHover">
+          <div class="plantImageColumn">
+            <img
+              class="peaceLily"
+              src="https://media.istockphoto.com/vectors/spathiphyllum-vector-id1282375535?k=20&m=1282375535&s=612x612&w=0&h=9yK8NnojDVxIbzlcmePZuhrkbiy0Hb4Bq8Gk1AyGRw8="
+              alt="Peace Lily"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!--Plant Info Cards-->
+      <div class="plantInfoGrid">
+        <div class="plantInfoColumn">
+          <div class="plantInfoColumnSnakePlant">
+            <h2 class="plantTitle">Snake Plant</h2>
+            <div class="plantGenus">Genus: Dracaena</div>
+            <div class="plantDescription">
+              Ease of Care<br />
+              <div class="plantRating">
+                🌿 🌿 🌿 🌿 <span class="transparent">🌿</span>
+              </div>
+              Sunlight<br />
+              <div class="plantRating">
+                ☀️ ☀️ ☀️ <span class="transparent">☀️ ☀️</span>
+              </div>
+              Water<br />
+              <div class="plantRating">
+                💧 💧 <span class="transparent">💧 💧 💧</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="plantInfoColumn">
+          <div class="plantInfoColumnSpiderPlant">
+            <h2 class="plantTitle">Spider Plant</h2>
+            <div class="plantGenus">Genus: Chlorophytum</div>
+            <div class="plantDescription">
+              Ease of Care<br />
+              <div class="plantRating">
+                🌿 🌿 🌿 🌿 🌿<span class="transparent"></span>
+              </div>
+              Sunlight<br />
+              <div class="plantRating">
+                ☀️ ☀️ <span class="transparent">☀️ ☀️ ☀️</span>
+              </div>
+              Water<br />
+              <div class="plantRating">
+                💧 💧 💧 <span class="transparent">💧 💧</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="plantInfoColumn">
+          <div class="plantInfoColumnPeaceLily">
+            <h2 class="plantTitle">Peace Lily</h2>
+            <div class="plantGenus">Genus: Spathiphyllum</div>
+            <div class="plantDescription">
+              Ease of Care<br />
+              <div class="plantRating">
+                🌿 🌿 🌿 🌿 <span class="transparent">🌿</span>
+              </div>
+              Sunlight<br />
+              <div class="plantRating">
+                ☀️ ☀️ <span class="transparent">☀️ ☀️ ☀️</span>
+              </div>
+              Water<br />
+              <div class="plantRating">
+                💧 💧 💧 <span class="transparent">💧 💧</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--BUY NOW BUTTONS-->
+      <div class="buyNowButtonGrid">
+        <div class="buyNowButtonColumn">
+          <button class="buyNowSnakePlant" onclick="buySnakePlant()">
+            Buy Now
+          </button>
+        </div>
+        <div class="buyNowButtonColumn">
+          <button class="buyNowSpiderPlant" onclick="buySpiderPlant()">
+            Buy Now
+          </button>
+        </div>
+        <div class="buyNowButtonColumn">
+          <button class="buyNowPeaceLily" onclick="buyPeaceLily()">
+            Buy Now
+          </button>
+        </div>
+      </div>
+
+      <!--Plant Benefits-->
+      <div class="plantBenefits">
+        <div class="plantBenefitsTitle">
+          <strong><em>The Benefits of Houseplants</em></strong>
+        </div>
+        <p class="plantBenefitsContent">
+          Improving your mood<br />
+          Reducing fatigue<br />
+          Lowering stress and anxiety<br />
+          Improving office performance and focus<br />
+          Boosting healing and pain tolerance<br />
+          Minimizing the occurrence of headaches by improving air quality
+        </p>
+      </div>
+
+      <!--Footer-->
+      <img class="gifPlants" src="https://i.gifer.com/1tsU.gif" />
+
+      <hr />
+      <div class="signature">
+        This page was developed by
+        <a
+          class="author"
+          href="https://www.linkedin.com/in/freya-morgan/"
+          target="_blank"
+        >
+          Freya Morgan
+        </a>
+      </div>
+    </div>
+
+    <script>
+      //AUDIO FUNCTION
+      let audio = document.querySelector("audio");
+      let playButton = document.querySelector(".playButton");
+      let pauseButton = document.querySelector(".pauseButton");
+
+      playButton.addEventListener("click", playAudio);
+      pauseButton.addEventListener("click", pauseAudio);
+
+      function playAudio() {
+        audio.play();
+        alert("🌿Welcome to Relax Mode🌿");
+      }
+      function pauseAudio() {
+        audio.pause();
+      }
+
+      //BUY BUTTON FUNCTION
+      function buySnakePlant() {
+        window.open(
+          "https://www.google.com/search?q=snake+plant&sa=X&biw=1280&bih=609&tbm=shop&sxsrf=APq-WBs1xG6zZqoSklHw1Unr9qCJhsEg-Q%3A1647550069156&ei=dZ4zYsTwCNGagQain5jIDw&ved=0ahUKEwiE__ukgs72AhVRTcAKHaIPBvkQ4dUDCAY&uact=5&oq=snake+plant&gs_lcp=Cgtwcm9kdWN0cy1jYxADMgQIIxAnMgQIIxAnMgUIABCABDILCAAQgAQQsQMQgwEyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BwgjELADECc6CwiuARDKAxCwAxAnSgQIQRgBUL8EWL8EYJEGaAFwAHgAgAFEiAFEkgEBMZgBAKABAcgBBsABAQ&sclient=products-cc"
+        );
+      }
+      function buySpiderPlant() {
+        window.open(
+          "https://www.google.com/search?q=spider+plant&sxsrf=APq-WBvUu8isWuYKZfFO6F-zTCcSIVgQhw:1647550109461&source=lnms&tbm=shop&sa=X&ved=2ahUKEwitqpi4gs72AhWGilwKHT4jDxkQ_AUoAnoECAIQBA&biw=1280&bih=609&dpr=1.5"
+        );
+      }
+      function buyPeaceLily() {
+        window.open(
+          "https://www.google.com/search?q=peace+lily&sa=X&biw=1280&bih=609&tbm=shop&sxsrf=APq-WBuCr6DH37IKEHO8tTZa26GW9gTaEw%3A1647550111187&ei=n54zYr7PCviChbIP3PeOoAk&oq=peace&gs_lcp=Cgtwcm9kdWN0cy1jYxADGAAyCggAELEDEIMBEEMyCwgAEIAEELEDEIMBMgUIABCABDIFCAAQgAQyBQgAEIAEMgsIABCABBCxAxCDATIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6DQgAELEDEIMBELADEEM6DggAEIAEELEDEIMBELADOggIABCABBCwAzoLCK4BEMoDELADECc6BAgAEENKBAhBGAFQ-wdY_g5g4RdoA3AAeACAAXKIAfIDkgEDMy4ymAEAoAEByAEPwAEB&sclient=products-cc"
+        );
+      }
+
+      //HOVER SNAKE PLANT IMAGE
+      function hoverSnakePlantImage() {
+        let snakePlant = document.querySelector(".snakePlant");
+        snakePlant.setAttribute(
+          "src",
+          "https://thelittlebotanical.com/wp-content/uploads/2021/01/24_JT_023_1000x1000.jpg"
+        );
+      }
+
+      function unhoverSnakePlantImage() {
+        let snakePlant = document.querySelector(".snakePlant");
+        snakePlant.setAttribute(
+          "src",
+          "https://media.istockphoto.com/vectors/sansevieria-vector-id1282375526?k=20&m=1282375526&s=612x612&w=0&h=19WsFD9YLFPV06fBqTQtQ7OqgX7Jea89TFJbVBqeFQY="
+        );
+      }
+
+      let hoverSnakePlantImageEffect =
+        document.querySelector(".snakePlantHover");
+      hoverSnakePlantImageEffect.addEventListener(
+        "mouseenter",
+        hoverSnakePlantImage
+      );
+      hoverSnakePlantImageEffect.addEventListener(
+        "mouseleave",
+        unhoverSnakePlantImage
+      );
+
+      //HOVER SPIDER PLANT IMAGE
+      function hoverSpiderPlantImage() {
+        let spiderPlant = document.querySelector(".spiderPlant");
+        spiderPlant.setAttribute(
+          "src",
+          "https://thelittlebotanical.com/wp-content/uploads/2021/01/24_JT_056_1000x1000.jpg"
+        );
+      }
+
+      function unhoverSpiderPlantImage() {
+        let spiderPlant = document.querySelector(".spiderPlant");
+        spiderPlant.setAttribute(
+          "src",
+          "https://media.istockphoto.com/vectors/chlorophytum-vector-id1282375452?k=20&m=1282375452&s=612x612&w=0&h=7YRKt-Wng-izts2NBi3VUixEYRLc4pppXmeX7t5t1hk="
+        );
+      }
+
+      let hoverSpiderPlantImageEffect =
+        document.querySelector(".spiderPlantHover");
+      hoverSpiderPlantImageEffect.addEventListener(
+        "mouseenter",
+        hoverSpiderPlantImage
+      );
+      hoverSpiderPlantImageEffect.addEventListener(
+        "mouseleave",
+        unhoverSpiderPlantImage
+      );
+
+      //HOVER PEACE LILY IMAGE
+      function hoverPeaceLilyImage() {
+        let peaceLily = document.querySelector(".peaceLily");
+        peaceLily.setAttribute(
+          "src",
+          "https://thelittlebotanical.com/wp-content/uploads/2021/01/24_JT_0301_000x1000.jpg"
+        );
+      }
+
+      function unhoverPeaceLilyImage() {
+        let peaceLily = document.querySelector(".peaceLily");
+        peaceLily.setAttribute(
+          "src",
+          "https://media.istockphoto.com/vectors/spathiphyllum-vector-id1282375535?k=20&m=1282375535&s=612x612&w=0&h=9yK8NnojDVxIbzlcmePZuhrkbiy0Hb4Bq8Gk1AyGRw8="
+        );
+      }
+
+      let hoverPeaceLilyImageEffect = document.querySelector(".peaceLilyHover");
+      hoverPeaceLilyImageEffect.addEventListener(
+        "mouseenter",
+        hoverPeaceLilyImage
+      );
+      hoverPeaceLilyImageEffect.addEventListener(
+        "mouseleave",
+        unhoverPeaceLilyImage
+      );
+
+      //PROMPTS
+      let name = prompt("🌿Hi! What is your first name?🌿");
+      let confirmWork = confirm(`Hi ${name.trim()}! Do you work from home?`);
+      if (confirmWork) {
+        alert("A houseplant could improve your work productivity!");
+      } else {
+        alert("A houseplant could improve your air quality and reduce stress!");
+      }
+
+      //WELCOME TEXT FUNCTION
+      let welcomeText = document.querySelector(".welcomeText");
+      welcomeText.innerHTML = `Welcome ${name.trim()}!`;
+    </script>
+  </body>
+</html>
